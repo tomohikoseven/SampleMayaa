@@ -1,0 +1,8 @@
+DaoType=S2JDBC
+DefaultResourcePath=/SampleMayaa/src/main/resources
+DefaultRootPackage=sampleMayaa
+DefaultSrcPath=/SampleMayaa/src/main/java
+ServletPath=/SampleMayaa
+ViewType=SA-Struts+Mayaa
+WebContentsRoot=src/main/webapp/
+eclipse.preferences.version=1
