@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <m:mayaa xmlns:m="http://mayaa.seasar.org"
-	xmlns:s="http://sastruts.seasar.org"
-	xmlns:f="http://sastruts.seasar.org/functions"
-	xmlns:bean="http://jakarta.apache.org/struts/tags-bean"
-	xmlns:html="http://jakarta.apache.org/struts/tags-html"
-	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:fmt="http://java.sun.com/jstl/fmt"
-	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
-	<m:write m:id="message" value="Seasar" />
-	<s:link m:id="label" href="Label.html">Label</s:link>
+					xmlns:s="http://sastruts.seasar.org"
+					xmlns:f="http://sastruts.seasar.org/functions"
+					xmlns:bean="http://jakarta.apache.org/struts/tags-bean"
+					xmlns:html="http://jakarta.apache.org/struts/tags-html"
+					xmlns:c="http://java.sun.com/jsp/jstl/core"
+					xmlns:fmt="http://java.sun.com/jstl/fmt"
+					xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+	<m:write m:id="title" value="Mayaaの整理" />
+	<m:write m:id="mokuteki" value="目的" />
+	<m:write m:id="gaiyo" value="Mayaaについて、整理されていないので、このページでそれを実現しようとしています。" />
+	<m:write m:id="jyunbi" value="準備編" />
+	<m:write m:id="kihon" value="基本編" />
+	<m:write m:id="ouyou" value="応用編" />
+
+    <!-- 準備編 -->
+	<s:link m:id="kankyo" href="kankyo">環境構築</s:link>
+
+    <!-- 基本編 -->
+	<s:link m:id="write" href="write">値の出力(m:write)</s:link>
+	<s:link m:id="echo" href="echo">タグの出力・加工(m:echo, m:attribute)</s:link>
+	<s:link m:id="if" href="if">条件分岐(m:if)</s:link>
+	<s:link m:id="for" href="for">繰り返し(m:for)</s:link>
+
+	<!-- JSPカスタムタグ -->
+	<s:link m:id="link" href="link">リンク(s:link)</s:link>
+
+    <!-- 応用編 -->
+	<s:link m:id="jizenshori" href="jizenshori">事前処理・事後処理(m:beforeRender, m:afterRender)</s:link>
+
+	<html:form m:id="form" action="/form">
+		<m:doBody />
+	</html:form>
+	<html:submit m:id="submit" action="/form"></html:submit>
 </m:mayaa>
