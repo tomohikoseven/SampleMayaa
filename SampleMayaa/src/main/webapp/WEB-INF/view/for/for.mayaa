@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <m:mayaa xmlns:m="http://mayaa.seasar.org">
 	<m:for m:id="loop" init="${ var index = 0 }" test="${ index &lt; 5 }" after="${ index++ }"/>
-	<m:write m:id="in_loop" value=" For ループ ${index }&lt;br&gt;" escapeXml="false" />
+	<m:write m:id="in_loop" value=" For ループ ${index}&lt;br&gt;" escapeXml="false" />
 </m:mayaa>

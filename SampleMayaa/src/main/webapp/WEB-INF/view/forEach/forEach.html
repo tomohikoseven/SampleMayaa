@@ -1,0 +1,68 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>繰り返し(m:forEach)</title>
+</head>
+<body>
+    <h3>繰り返し(m:forEach)</h3>
+    <span id="loop">
+        <label id="in_loop">繰り返し1</label>
+    </span>
+    <b>forEach.html</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre><code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;title&gt;繰り返し(m:forEach)&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h3&gt;繰り返し(m:forEach)&lt;/h3&gt;
+    &lt;span id="loop"&gt;
+        &lt;label id="in_loop"&gt;繰り返し1&lt;/label&gt;
+    &lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    </div>
+    <b>for.mayaa</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre>
+        <code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
+    &lt;m:forEach m:id="loop" items="&#036;{lists}" var="list" /&gt;
+    &lt;m:write m:id="in_loop" value="&#036;{list}&lt;br&gt;" escapeXml="false" /&gt;
+&lt;/m:mayaa&gt;
+</code></pre>
+    </div>
+    <b>ForEachAction.java</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre>
+        <code>
+package sampleMayaa.action;
+
+import org.seasar.struts.annotation.Execute;
+
+public class ForEachAction {
+
+    public String[] lists;
+
+    @Execute(validator = false)
+    public String index() {
+        lists = new String[5];
+
+        lists[0] = "１個目";
+        lists[1] = "２個目";
+        lists[2] = "３個目";
+        lists[3] = "４個目";
+        lists[4] = "５個目";
+
+        return "forEach.html";
+    }
+}
+
+</code></pre>
+    </div>
+</body>
+</html>
