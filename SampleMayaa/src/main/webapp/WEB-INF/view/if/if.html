@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>条件分岐(m:if)</title>
+</head>
+<body>
+    <h3>条件分岐(m:if)</h3>
+    <span id="if_1"><p><span id="if_1_message">1を出力しています。</span></p></span>
+    <span id="if_0"><p><span id="if_0_message">0を出力しています。</span></p></span>
+    <b>if.html</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre><code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;title&gt;条件分岐(m:if)&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h3&gt;表示&lt;/h3&gt;
+    &lt;span id="if_1"&gt;&lt;p&gt;&lt;span id="if_1_message"&gt;1を出力しています。&lt;/span&gt;&lt;/p&gt;&lt;/span&gt;
+    &lt;span id="if_0"&gt;&lt;p&gt;&lt;span id="if_0_message"&gt;0を出力しています。&lt;/span&gt;&lt;/p&gt;&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    </div>
+    <b>if.mayaa</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre>
+        <code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
+    &lt;m:if m:id="if_1" test="${randNum == 1 }"/&gt;
+    &lt;m:if m:id="if_0" test="${randNum != 1 }"/&gt;
+    &lt;m:write m:id="if_1_message" value="1を出力。"/&gt;
+    &lt;m:write m:id="if_0_message" value="0を出力。"/&gt;
+&lt;/m:mayaa&gt;
+</code></pre>
+    </div>
+    <b>IfAction.java</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre>
+        <code>
+package sampleMayaa.action;
+
+import java.util.Random;
+import javax.annotation.Resource;
+import org.seasar.struts.annotation.Execute;
+
+public class IfAction {
+
+    public int randNum;
+
+    @Execute(validator = false)
+    public String index() {
+        Random rand = new Random();
+        randNum = rand.nextInt(2);  // 0と1をランダムに生成
+        return "if.html";
+    }
+}
+</code></pre>
+    </div>
+</body>
+</html>

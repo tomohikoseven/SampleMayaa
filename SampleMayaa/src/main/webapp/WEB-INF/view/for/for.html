@@ -1,36 +1,42 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>値の出力(m:write)</title>
+<title>繰り返し(m:for)</title>
 </head>
 <body>
-    <h3>値の出力(m:write)</h3>
-    <p><span id="write">write</span></p>
-    <b>write.html</b>
+    <h3>繰り返し(m:for)</h3>
+    <span id="loop">
+        <label id="in_loop">繰り返し1</label>
+    </span>
+    <b>for.html</b>
     <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
     <pre><code>
 &lt;html&gt;
 &lt;head&gt;
 &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
-&lt;title&gt;値の出力(m:write)&lt;/title&gt;
+&lt;title&gt;繰り返し(m:for)&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h2&gt;表示(m:write)&lt;/h2&gt;
-    &lt;span id="write"&gt;write&lt;/span&gt;
+    &lt;h3&gt;繰り返し(m:for)&lt;/h3&gt;
+    &lt;span id="loop"&gt;
+        &lt;label id="in_loop"&gt;繰り返し1&lt;/label&gt;
+    &lt;/span&gt;
 &lt;/body&gt;
-&lt;/html&gt;;</code></pre>
+&lt;/html&gt;
+</code></pre>
     </div>
-    <b>write.mayaa</b>
+    <b>for.mayaa</b>
     <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
     <pre>
         <code>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:write m:id="write" value="m:writeで出力しています。" /&gt;
+    &lt;m:for m:id="loop" init="&#036;{ var index = 0 }" test="&#036;{ index &lt; 5 }" after="&#036;{ index++ }"/&gt;
+    &lt;m:write m:id="in_loop" value=" For ループ &#036;{index}&lt;br&gt;" escapeXml="false" /&gt;
 &lt;/m:mayaa&gt;
 </code></pre>
     </div>
-    <b>WriteAction.java</b>
+    <b>EchoAction.java</b>
     <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
     <pre>
         <code>
@@ -38,12 +44,14 @@ package sampleMayaa.action;
 
 import org.seasar.struts.annotation.Execute;
 
-public class WriteAction {
+public class ForAction {
+
     @Execute(validator = false)
     public String index() {
-        return "write.html";
+        return "for.html";
     }
 }
+
 </code></pre>
     </div>
 </body>

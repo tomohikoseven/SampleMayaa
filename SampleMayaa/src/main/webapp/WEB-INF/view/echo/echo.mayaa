@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <m:mayaa xmlns:m="http://mayaa.seasar.org">
-	<m:write m:id="write" value="m:writeで出力しています。" />
+	<m:echo m:id="echo" >
+	   <m:attribute name="style" value="color: #ff0000;"/>
+	</m:echo>
 </m:mayaa>

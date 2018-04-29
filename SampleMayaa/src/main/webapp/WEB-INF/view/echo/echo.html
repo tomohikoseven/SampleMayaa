@@ -1,36 +1,39 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>値の出力(m:write)</title>
+<title>タグの出力・加工(m:echo, m:attribute)</title>
 </head>
 <body>
-    <h3>値の出力(m:write)</h3>
-    <p><span id="write">write</span></p>
-    <b>write.html</b>
+    <h3>タグの出力・加工(m:echo, m:attribute)</h3>
+    <p id="echo">echoサンプル(文字を赤字にしました。)</p>
+    <b>echo.html</b>
     <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
     <pre><code>
 &lt;html&gt;
 &lt;head&gt;
 &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
-&lt;title&gt;値の出力(m:write)&lt;/title&gt;
+&lt;title&gt;タグの出力・加工(m:echo, m:attribute)&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h2&gt;表示(m:write)&lt;/h2&gt;
-    &lt;span id="write"&gt;write&lt;/span&gt;
+    &lt;h3&gt;表示&lt;/h3&gt;
+    &lt;p id="echo"&gt;echoサンプル(文字を赤字にしました。)&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;;</code></pre>
+&lt;/html&gt;
+</code></pre>
     </div>
-    <b>write.mayaa</b>
+    <b>echo.mayaa</b>
     <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
     <pre>
         <code>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
-    &lt;m:write m:id="write" value="m:writeで出力しています。" /&gt;
+    &lt;m:echo m:id="echo" &gt;
+       &lt;m:attribute name="style" value="color: #ff0000;"/&gt;
+    &lt;/m:echo&gt;
 &lt;/m:mayaa&gt;
 </code></pre>
     </div>
-    <b>WriteAction.java</b>
+    <b>EchoAction.java</b>
     <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
     <pre>
         <code>
@@ -38,10 +41,10 @@ package sampleMayaa.action;
 
 import org.seasar.struts.annotation.Execute;
 
-public class WriteAction {
+public class EchoAction {
     @Execute(validator = false)
     public String index() {
-        return "write.html";
+        return "echo.html";
     }
 }
 </code></pre>

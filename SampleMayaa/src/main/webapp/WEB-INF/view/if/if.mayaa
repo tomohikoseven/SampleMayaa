@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<m:mayaa xmlns:m="http://mayaa.seasar.org">
+	<m:if m:id="if_1" test="${randNum == 1 }"/>
+	<m:if m:id="if_0" test="${randNum != 1 }"/>
+	<m:write m:id="if_1_message" value="1を出力。"/>
+	<m:write m:id="if_0_message" value="0を出力。"/>
+</m:mayaa>
