@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>指定したタグを出力(m:element)</title>
+</head>
+<body>
+    <h3>指定したタグを出力(m:element)</h3>
+    <span id="element">タグを変更して出力しました。</span>
+    <b>element.html</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre><code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;title&gt;指定したタグを出力(m:element)&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h3&gt;指定したタグを出力(m:element)&lt;/h3&gt;
+    &lt;span id="element"&gt;タグを変更して出力しました。&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    </div>
+    <b>element.mayaa</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre>
+        <code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
+    &lt;m:element m:id="element" name="p"&gt;ここはタグを変更して表示しています。ソースを表示して確かめてください。&lt;/m:element&gt;
+&lt;/m:mayaa&gt;
+</code></pre>
+    </div>
+    <b>ElementAction.java</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre>
+        <code>
+package sampleMayaa.action;
+
+import org.seasar.struts.annotation.Execute;
+
+public class ElementAction {
+
+    @Execute(validator = false)
+    public String index() {
+        return "element.html";
+    }
+}
+</code></pre>
+    </div>
+</body>
+</html>

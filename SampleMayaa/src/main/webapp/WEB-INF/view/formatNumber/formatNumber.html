@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>数値のフォーマット出力(m:formatNumber)</title>
+</head>
+<body>
+    <h3>数値のフォーマット出力(m:formatNumber)</h3>
+    <p><span id="formatNumber">10000エン</span></p>
+    <b>formatNumber.html</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre><code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;title&gt;数値のフォーマット出力(m:formatNumber)&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h3&gt;数値のフォーマット出力(m:formatNumber)&lt;/h3&gt;
+    &lt;p&gt;&lt;span id="formatNumber"&gt;10000エン&lt;/span&gt;&lt;/p&gt;
+&lt;/head&gt;
+&lt;/html&gt;
+</code></pre>
+    </div>
+    <b>formatNumber.mayaa</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre>
+        <code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
+    &lt;m:formatNumber m:id="formatNumber" pattern="###,###円" value="&#036;{randNum}" /&gt;
+&lt;/m:mayaa&gt;
+</code></pre>
+    </div>
+    <b>FormatNumberAction.java</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre>
+        <code>
+package sampleMayaa.action;
+
+import java.util.Random;
+import org.seasar.struts.annotation.Execute;
+
+public class FormatNumberAction {
+
+    public int randNum;
+
+    @Execute(validator = false)
+    public String index() {
+        Random rand = new Random();
+        randNum = rand.nextInt(10001);  // ランダムに生成
+        return "formatNumber.html";
+    }
+}
+</code></pre>
+    </div>
+</body>
+</html>

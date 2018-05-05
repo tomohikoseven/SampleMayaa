@@ -23,6 +23,11 @@
 	<s:link m:id="if" href="if">条件分岐(m:if)</s:link>
 	<s:link m:id="for" href="for">繰り返し(m:for)</s:link>
 	<s:link m:id="forEach" href="forEach">繰り返し(m:forEach)</s:link>
+	<s:link m:id="with" href="with">処理をまとめる(m:with)</s:link>
+	<s:link m:id="comment" href="comment">コメントを出力(m:comment)</s:link>
+	<s:link m:id="element" href="element">指定したタグを出力(m:element)</s:link>
+	<s:link m:id="formatDate" href="formatDate">日付のフォーマット出力(m:formatDate)</s:link>
+	<s:link m:id="formatNumber" href="formatNumber">数値のフォーマット出力(m:formatNumber)</s:link>
 
 	<!-- JSPカスタムタグ -->
 	<s:link m:id="link" href="link">リンク(s:link)</s:link>

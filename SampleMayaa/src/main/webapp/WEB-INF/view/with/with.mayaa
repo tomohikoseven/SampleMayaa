@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<m:mayaa xmlns:m="http://mayaa.seasar.org">
+    <m:with m:id="with">
+        <m:if test="${randNum == 1}">
+            <m:write value="randNumは１です。" />
+        </m:if>
+        <m:if test="${randNum != 1}">
+            <m:write value="randNumは１ではありません。" />
+        </m:if>
+    </m:with>
+</m:mayaa>

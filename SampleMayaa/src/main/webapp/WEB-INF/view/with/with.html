@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>処理をまとめる(m:with)</title>
+</head>
+<body>
+    <h3>処理をまとめる(m:with)</h3>
+    <p><span id="with">withプロセッサを使っています。</span></p>
+    <b>with.html</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre><code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;title&gt;処理をまとめる(m:with)&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h3&gt;処理をまとめる(m:with)&lt;/h3&gt;
+    &lt;p&gt;&lt;span id="with"&gt;withプロセッサを使っています。&lt;/span&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    </div>
+    <b>with.mayaa</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre>
+        <code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
+    &lt;m:with m:id="with"&gt;
+        &lt;m:if test="&#036;{randNum == 1}"&gt;
+            &lt;m:write value="randNumは１です。" /&gt;
+        &lt;/m:if&gt;
+        &lt;m:if test="&#036;{randNum != 1}"&gt;
+            &lt;m:write value="randNumは１ではありません。" /&gt;
+        &lt;/m:if&gt;
+    &lt;/m:with&gt;
+&lt;/m:mayaa&gt;
+</code></pre>
+    </div>
+    <b>WithAction.java</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre>
+        <code>
+package sampleMayaa.action;
+
+import java.util.Random;
+import org.seasar.struts.annotation.Execute;
+
+public class WithAction {
+
+    public int randNum;
+
+    @Execute(validator = false)
+    public String index() {
+        Random rand = new Random();
+        randNum = rand.nextInt(2);  // 0と1をランダムに生成
+        return "with.html";
+    }
+}
+</code></pre>
+    </div>
+</body>
+</html>

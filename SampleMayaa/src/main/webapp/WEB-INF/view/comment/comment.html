@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>コメントを出力(m:comment)</title>
+</head>
+<body>
+    <h3>コメントを出力(m:comment)</h3>
+    <span id="comment">コメント</span>
+    <p>↑コメントを出力しました。ソースを表示してください。</p>
+    <b>comment.html</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre><code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;title&gt;コメントを出力(m:comment)&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h3&gt;コメントを出力(m:comment)&lt;/h3&gt;
+    &lt;span id="comment"&gt;コメント&lt;/span&gt;
+    &lt;p&gt;↑コメントを出力しました。ソースを表示してください。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    </div>
+    <b>comment.mayaa</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre>
+        <code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
+    &lt;m:comment m:id="comment"&gt;ここはコメントです。&lt;/m:comment&gt;
+&lt;/m:mayaa&gt;
+</code></pre>
+    </div>
+    <b>CommentAction.java</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre>
+        <code>
+package sampleMayaa.action;
+
+import org.seasar.struts.annotation.Execute;
+
+public class CommentAction {
+
+    @Execute(validator = false)
+    public String index() {
+        return "comment.html";
+    }
+}
+</code></pre>
+    </div>
+</body>
+</html>

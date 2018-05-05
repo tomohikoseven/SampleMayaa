@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>日付のフォーマット出力(m:formatDate)</title>
+</head>
+<body>
+    <h3>日付のフォーマット出力(m:formatDate)</h3>
+    <p>今日は<span id="formatDate">2018年5月1日</span>です。</p>
+    <b>formatDate.html</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre><code>
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;title&gt;日付のフォーマット出力(m:formatDate)&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h3&gt;日付のフォーマット出力(m:formatDate)&lt;/h3&gt;
+    &lt;p&gt;今日は&lt;span id="formatDate"&gt;2018年5月1日&lt;/span&gt;です。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    </div>
+    <b>formatDate.mayaa</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre>
+        <code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;m:mayaa xmlns:m="http://mayaa.seasar.org"&gt;
+    &lt;m:formatDate m:id="formatDate" value="&#036;{date}"  pattern="yyyy年MM月dd日"/&gt;
+&lt;/m:mayaa&gt;
+</code></pre>
+    </div>
+    <b>FormatDateAction.java</b>
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;">
+    <pre>
+        <code>
+package sampleMayaa.action;
+
+import java.util.Date;
+import org.seasar.struts.annotation.Execute;
+
+public class FormatDateAction {
+
+    public Date date = null;
+
+    @Execute(validator = false)
+    public String index() {
+        date = new Date();
+        return "formatDate.html";
+    }
+}
+</code></pre>
+    </div>
+</body>
+</html>
