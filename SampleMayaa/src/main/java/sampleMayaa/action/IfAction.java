@@ -1,7 +1,6 @@
 package sampleMayaa.action;
 
 import java.util.Random;
-import javax.annotation.Resource;
 import org.seasar.struts.annotation.Execute;
 
 public class IfAction {
